@@ -3,7 +3,7 @@
  * PulseAudio host to play natively in Linux based systems without
  * ALSA emulation
  *
- * Copyright (c) 2014-2020 Tuukka Pasanen <tuukka.pasanen@ilmi.fi>
+ * Copyright (c) 2014-2022 Tuukka Pasanen <tuukka.pasanen@ilmi.fi>
  * Copyright (c) 2016 Sqweek
  *
  * Based on the Open Source API proposed by Ross Bencina
@@ -145,6 +145,8 @@ typedef struct PaPulseAudio_Stream
 
     void *outBuffer;
     void *inBuffer;
+    PaUtilThreading processThread;
+    int threadActive;
 
     PaUtilRingBuffer inputRing;
     PaUtilRingBuffer outputRing;

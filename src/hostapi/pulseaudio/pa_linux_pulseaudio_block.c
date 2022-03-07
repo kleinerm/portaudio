@@ -3,7 +3,7 @@
  * PulseAudio host to play natively in Linux based systems without
  * ALSA emulation
  *
- * Copyright (c) 2014-2020 Tuukka Pasanen <tuukka.pasanen@ilmi.fi>
+ * Copyright (c) 2014-2022 Tuukka Pasanen <tuukka.pasanen@ilmi.fi>
  * Copyright (c) 2016 Sqweek
  *
  * Based on the Open Source API proposed by Ross Bencina
@@ -148,7 +148,7 @@ PaError PaPulseAudio_WriteStreamBlock( PaStream * s,
             while( pa_operation_get_state( l_ptrOperation ) == PA_OPERATION_RUNNING )
             {
                 l_iRet ++;
-                PA_PULSEAUDIO_IS_ERROR(l_ptrStream, paStreamIsStopped)
+                PA_PULSEAUDIO_IS_ERROR( l_ptrStream, paStreamIsStopped )
 
                 /* As this shouldn never happen it's error if it does */
                 if( l_iRet >= 10000 )
