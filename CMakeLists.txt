@@ -341,7 +341,8 @@ elseif(UNIX)
       target_sources(PortAudio PRIVATE
         src/hostapi/pulseaudio/pa_linux_pulseaudio_block.c
         src/hostapi/pulseaudio/pa_linux_pulseaudio.c
-        src/hostapi/pulseaudio/pa_linux_pulseaudio_cb.c)
+        src/hostapi/pulseaudio/pa_linux_pulseaudio_cb.c
+        src/hostapi/pulseaudio/pa_linux_pulseaudio_thread.c)
 
       target_compile_definitions(PortAudio PUBLIC PA_USE_PULSEAUDIO=1)
       set(PKGCONFIG_CFLAGS "${PKGCONFIG_CFLAGS} -DPA_USE_PULSEAUDIO=1")
